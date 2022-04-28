@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>About us generator</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/jumbotron/">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .form-floating{
+
+        margin: auto;
+        display: block;
+        width: 80%;
+        
+      }
+
+      .form-control{
+        height: auto;
+        overflow-y: scroll;
+      }
+
+      .col-md-10{
+        margin: auto;
+        display: block;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<main>
+  <div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
+        <span class="fs-4">About Us Generator</span>
+      </a>
+    </header>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Fill in the details</h1>
+        <p class="col-md-8 fs-4">Using the user's input, a custom about us page is created.</p>
+        <br><div class="row">
+          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Website Name</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control form-control-lg" id="website-name" placeholder="Ex- depawali">
+          </div>
+        </div><br>
+        <div class="row">
+          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Website Type</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control form-control-lg" id="website-type" placeholder="Ex- Educational,Finance,Dating">
+          </div>
+        </div><br>
+        <div class="row">
+          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Website Speciality</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control form-control-lg" id="website-speciality" placeholder="Ex- Tech Tutorial,Online learning tips">
+          </div>
+        </div><br>
+        <button class="btn btn-primary btn-lg" type="button" onclick="get_values()">Generate</button>
+      </div>
+
+    </div>
+
+    <div class="form-floating">
+      <textarea class="form-control" placeholder="<h1>About us</h1>" id="about-us" style="height: 350px"></textarea><br>
+      <label for="floatingTextarea2"><b>HTML Code</b></label><button class="btn btn-outline-dark" type="button" onclick="copy_code()">Copy Code</button>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-md-10">
+        <div class="h-300 p-5 text-white bg-dark rounded-3" id="display">
+         
+        </div>
+      </div>
+      
+
+    <footer class="pt-3 mt-4 text-muted border-top">
+      &copy; Mahesh Reddy @2022
+    </footer>
+  </div>
+</main>
+
+
+    
+  </body>
+
+  <script>
+    var company_name;
+    var website_type;
+    var website_speciality;
+    function get_values(){
+        website_name = document.getElementById("website-name").value;
+        website_type = document.getElementById('website-type').value; 
+        website_speciality = document.getElementById('website-speciality').value; 
+        create_about_us();   
+    }
+
+    function create_about_us(){
+        var textbox = document.getElementById("about-us");
+        var dis = document.getElementById('display');
+        textbox.value = '<h2>About Us !</h2>\r\n<h3 style="text-align: center;">Welcome To <span id="W_Name1">'+website_name+'</span></h3>\r\n<p><span id="W_Name2">'+website_name+'</span> is a Professional <span id="W_Type1">'+website_type+'</span> Platform. Here we will provide you only interesting content, which you will like very much. We\'re dedicated to providing you the best of <span id="W_Type2">'+website_type+'</span>, with a focus on dependability and <span id="W_Spec">'+website_speciality+'</span>. We\'re working to turn our passion for <span id="W_Type3">'+website_type+'</span> into a booming <a href="https://www.blogearns.com" rel="do-follow" style="color:inherit; text-decoration: none;">online website</a>. We hope you enjoy our <span id="W_Type4">'+website_type+'</span> as much as we enjoy offering them to you.</p>\r\n<p>I will keep posting more important posts on my Website for all of you. Please give your support and love.</p>\r\n<p style="font-weight: bold; text-align: center;">Thanks For Visiting Our Site<br><br>\r\n<span style="color: blue; font-size: 16px; font-weight: bold; text-align: center;">Have a nice day !</span></p>';
+        dis.innerHTML = textbox.value;
+    }
+
+    function copy_code() {
+        var copyText = document.getElementById("about-us");
+
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        navigator.clipboard.writeText(copyText.value);
+        
+        
+}
+</script>
+</html>
